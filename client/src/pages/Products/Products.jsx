@@ -28,7 +28,7 @@ const Products = () => {
     );
   };
 
-  console.log(subCats);
+  // console.log(subCats);
 
   return (
     <div className='products'>
@@ -44,15 +44,15 @@ const Products = () => {
 
           ))}
         </div>
-        <div className="filterItem">
+        {/* <div className="filterItem">
           <h2>Filter by price</h2>
           <div className="inputItem">
             <span>0</span>
             <input type="range" min={0} max={1000} onChange={(e) => setMaxPrice(e.target.value)} />
             <span>{maxPrice}</span>
           </div>
-        </div>
-        <div className="filterItem">
+        </div> */}
+        {/* <div className="filterItem">
           <h2>Sort by</h2>
           <div className="inputItem">
             <input type="radio" id='asc' value="asc" name='price' onChange={(e) => setSort('asc')} />
@@ -62,7 +62,7 @@ const Products = () => {
             <input type="radio" id='desc' value="desc" name='price' onChange={(e) => setSort('desc')} />
             <label htmlFor="desc">Highest Price</label>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="right">
         <div className="catImg">

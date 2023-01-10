@@ -5,22 +5,24 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from '../Cart/Cart.jsx'
 import './Navbar.scss'
+import { useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false)
+  const products = useSelector((state) => state.cart.products)
 
   return (
     <div className='navbar'>
       <div className="wrapper">
         <div className="left">
           <div className="item">
-            <Link className="link" to="products/1">Wanita</Link>
+            <Link className="link" to="products/1">Pria</Link>
           </div>
           <div className="item">
-            <Link className="link" to="products/2">Pria</Link>
+            <Link className="link" to="products/2">Wanita</Link>
           </div>
           <div className="item">
             <Link className="link" to="products/3">Anak</Link>
@@ -47,7 +49,7 @@ const Navbar = () => {
             <FavoriteBorderIcon />
             <div className="cartIcon" onClick={(e) => setOpenCart(!openCart)}>
               <ShoppingCartIcon />
-              <span>0</span>
+              <span>{products.length}</span>
             </div>
           </div>
         </div>

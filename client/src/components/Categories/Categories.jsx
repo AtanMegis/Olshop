@@ -23,7 +23,7 @@ const Categories = () => {
             alt=""
           />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/products/2" className="link">
               Wanita
             </Link>
           </button>
@@ -64,7 +64,7 @@ const Categories = () => {
                 alt=""
               />
               <button>
-                <Link to="/products/1" className="link">
+                <Link to="/products/5" className="link">
                   Aksesoris
                 </Link>
               </button>
@@ -77,7 +77,7 @@ const Categories = () => {
             alt=""
           />
           <button>
-            <Link to="/products/1" className="link">
+            <Link to="/products/4" className="link">
               Sepatu
             </Link>
           </button>

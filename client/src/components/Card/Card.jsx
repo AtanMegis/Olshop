@@ -2,7 +2,17 @@ import './Card.scss'
 import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 import { Link } from 'react-router-dom'
 
+
+
 const Card = ({ item }) => {
+  const rupiah = (number) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 3
+    }).format(number);
+  }
+
   return (
     <Link className='link' to={`/product/${item.id}`}>
       <div className='card'>
@@ -17,8 +27,7 @@ const Card = ({ item }) => {
         </div>
         <h2>{item?.attributes.title}</h2>
         <div className="prices">
-          <h3>Rp{item.oldPrice || item?.attributes.price + 20}</h3>
-          <h3>Rp{item?.attributes.price}</h3>
+          <h3> {rupiah(item?.attributes.price)}</h3>
         </div>
 
       </div>
