@@ -5,14 +5,14 @@ import useFetch from '../../hooks/useFetch.js'
 import './Products.scss'
 
 const Products = () => {
-  const [maxPrice, setMaxPrice] = useState(1000)
-  const [sort, setSort] = useState()
+  // const [maxPrice, setMaxPrice] = useState(1000)
+  // const [sort, setSort] = useState()
   const [subCats, setSubCats] = useState([])
 
   const catId = parseInt(useParams().id)
 
 
-  const { data, loading, error } = useFetch(
+  const { data } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   );
 
@@ -72,7 +72,8 @@ const Products = () => {
             alt=""
           />
         </div>
-        <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={subCats} />
+        {/* <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={subCats} /> */}
+        <List catId={catId} subCats={subCats} />
       </div>
     </div>
   )

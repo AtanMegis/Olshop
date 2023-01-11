@@ -14,7 +14,7 @@ const Product = () => {
   const id = useParams().id
   const dispatch = useDispatch()
 
-  const { data, error, loading } = useFetch(`/products/${id}?populate=*`)
+  const { data, loading } = useFetch(`/products/${id}?populate=*`)
 
 
   return (

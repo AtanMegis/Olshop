@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
+
 import './List.scss'
 import Card from '../Card/Card'
 import useFetch from '../../hooks/useFetch.js'
 
-const List = ({ subCats, maxPrice, sort, catId }) => {
+const List = ({ subCats, catId }) => {
+  // const List = ({ subCats, maxPrice, sort, catId }) => {
 
-  const { data, loading, error } = useFetch(
+  const { data, loading } = useFetch(
     `/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
       (item) => `&[filters][sub_categories][id][$eq]=${item}`
     )}`
